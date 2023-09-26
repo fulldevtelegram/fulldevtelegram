@@ -18,7 +18,7 @@ window.addEventListener('load', function name(params) {
 
     class Game {
         constructor(width, height){
-            
+            this.sendrequest= false;
             this.gameOver= 1;
             this.resetGame=0;
             this.width = width;
@@ -138,6 +138,35 @@ window.addEventListener('load', function name(params) {
             if(game.resetGame== 1) {
                 game.reset();
                 requestAnimationFrame(animate);
+            }
+            if(game.sendrequest){
+                const gameScoreData = {
+                    user_id: 812395096, // Replace with the actual user ID
+                    score: game.score,   // Replace with the actual score
+                    // Add any other relevant data here
+                };
+                
+                const botToken = '6649093228:AAE70BOK905Ez5EkZmgm3E1MPEiPGBihnBQ';
+                
+                const payload = JSON.stringify(gameScoreData);
+                
+                const xhr = new XMLHttpRequest();
+                
+                xhr.open('POST', `https://api.telegram.org/bot${botToken}/setGameScore`, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            console.log('Game score recorded successfully.');
+                        } else {
+                            console.error('Failed to record game score.');
+                        }
+                    }
+                };
+                
+                xhr.send(payload);
+                
             }
 
 

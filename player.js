@@ -81,6 +81,7 @@ checkCollision(){
        this.game.gameOver=1;
        this.game.resetGame =1;
        this.score.innerText= "Score : "+ this.game.score;
+       this.game.sendrequest=true; 
        this.canvas.setAttribute('hidden','true');
        this.gameOverDiv.removeAttribute('hidden')     
         }else{
