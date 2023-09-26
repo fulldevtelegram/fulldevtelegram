@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, , initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flappy G</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <div id="startGame" >
+        <h1 id="present">TopG-AI </h1>
+        <h1 id="present1">presents</h1>
+        <h1 id="titelStartGame">FlappyG</h1>
+        
+        <img src="photos/bg.png" alt="">
+        <img id="startLogo" src="photos/startLogo.png" alt="">
+    <button id="startButton" onclick="displayGame()">Start game</button>
+    <button id="websiteButton" ><a href="https://topg-ai.org/" target="_blank">Website</a></button>
+    <button id="telegramButton" ><a href="">Telegram</a> </button>
+    <button id="contactButton" ><a href="https://twitter.com/TopGAIERC20" target="_blank">Contact us</a></button>
+    <h6 id="powered">powered by:TopG-AI</h6>
+    </div>
+    <div id="canvasContainer" hidden>
+        <canvas id="canvas1" ></canvas>
+        
+    
+    </div>
+    
+    <img id="player" src="photos/sprite.png" >
+    <img id="background" src="photos/bg2.jpg" >
+    <img id="topPipe" src="photos/toppipe.png" >
+    <img id="bottomPipe" src="photos/bottompipe.png" >
+
+    <div id="endGame" hidden>
+        <img src="photos/bg.png" alt="" id="gameOverImage">
+        <h1 id="gameOverText">Game Over</h1> 
+        <h1 id="score"> </h1>
+        <button id="restartButton" onclick="restart()">Restart game</button>
+        
+        <button id="shareButton" value="Send Email" onclick="">share score</button>
+        <button id="telegramButton" ><a href="">Telegram</a></button>
+        <button id="websiteButton" ><a href="https://topg-ai.org/" target="_blank">Website</a></button>
+        <button id="contactButton" ><a href="https://twitter.com/TopGAIERC20" target="_blank">Contact us</a></button>
+        <h6 id="powered">powered by:TopG-AI</h6>
+    </div>
+
+    
+    <script type="module" src="main.js"></script>
+    <script src="logic.js"></script>
+    <script type="module" src="player.js"></script>
+    
+</body>
+</html>
